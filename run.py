@@ -14,7 +14,6 @@ statcode = 0
 statholder = 0
 searchRes = []
 newsRes = []
-newsapi = NewsApiClient(api_key = '')
 
 @app.route("/sms", methods=['GET', 'POST'])
 def sms():
@@ -104,7 +103,6 @@ def sms():
 
 def searchResults(query):
     #Searches Google
-    r = requests.get("https://www.googleapis.com/customsearch/v1?key=&cx=="+query)
 
     searchResultsStr = json.loads(r.text)["items"]
     searchResults = []
@@ -145,5 +143,24 @@ def urlToParagraphs(url):
     except Exception as e:
         print(str(e))
         return []
+
+
+class MLStripper(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.reset()
+        self.fed = []
+    def handle_data(self, d):
+        if self.get_starttag_text() == '<div style="font-size:0.9em">':
+            self.fed.append(' ('+d+')')
+        else:
+            self.fed.append(d)
+    def get_data(self):
+        return ''.join(self.fed)
+
+def strip_tags(html):
+    s = MLStripper()
+    s.feed(html)
+    return s.get_data()
 
 
