@@ -2,9 +2,8 @@
 
 [Website can be found here](https://devpost.com/software/sms-net) and was made for HackRU Fall 2019.
 
-## Functionality
-
-TrashTag Locator is a web based application that parses Twitter and plots the location of any tweet that participated in the #TrashTag challenge. Users can place a point to indicate where they want to clean and can connect with users nearby via SMS who also want to clean the nearby area.
+## Inspiration
+We noticed that connection to SMS (mobile text messaging) is far more reliable and widespread than connection to the internet. However, reliable connection to the internet is a near-necessity nowadays; we sought to resolve this difference by using SMS network to provide primitive internet functionality, thereby acting as a portal to the internet for those without direct connection. In particular, this project greatly increases accessibility in developing areas which do not have the necessary expensive internet infrastructure established, but do have more widespread access to text (or even people without smartphones).
 
 ## What it does
 All communication happens through text: the user sends input by texting our Twilio-registered number, and receives outputs through texts from that same number. The user enters various one of 6 different commands, which correspond to some of the most important basic uses of the internet, including:
