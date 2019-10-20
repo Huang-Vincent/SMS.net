@@ -39,8 +39,8 @@ We used Python with Flask to host our backend server for communication with Twil
 * GCP’s compute engine virtual machine environment
 * Extensive use of regex
 ## What's next for SMS.net
-More functionalities are always nice (email, social media…)
-Moving to a Natural Language Processing-based approach for the chatbot would undoubtedly make it more powerful (but that’s a nontrivial problem, definitely not suited to an overnight hackathon)
+* More functionalities are always nice (email, social media…)
+* Moving to a Natural Language Processing-based approach for the chatbot would undoubtedly make it more powerful (but that’s a nontrivial problem, definitely not suited to an overnight hackathon)
 
 ## Authors
 
